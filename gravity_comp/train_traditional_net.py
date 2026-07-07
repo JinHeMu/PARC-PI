@@ -21,7 +21,7 @@ from common import (
 
 
 def main():
-    filename = './datasets/data2.csv'
+    filename = './datasets/data_0005.csv'
     model_filename = './models/traditional_net.pt'
 
     set_seed(42)
@@ -51,16 +51,26 @@ def main():
     print("\nCompensation RMSE (plain NN):")
     print(f"  Fx,Fy,Fz: {err[0]:.4f}, {err[1]:.4f}, {err[2]:.4f} N")
     print(f"  Tx,Ty,Tz: {err[3]:.4f}, {err[4]:.4f}, {err[5]:.4f} Nm")
-
     torch.save({
         'method': 'plain_nn',
         'model_state_dict': model.state_dict(),
-        'input_dim': input_dim, 'hidden_dim': 64,
-        'x_mean': x_mean, 'x_std': x_std, 'y_mean': y_mean, 'y_std': y_std,
-        'G': params['G'], 'F_bias': params['F_bias'],
-        'CoM': params['CoM'], 'T_bias': params['T_bias'],
+        'input_dim': input_dim,
+        'hidden_dim': 64,
+
+        'x_mean': x_mean,
+        'x_std': x_std,
+        'y_mean': y_mean,
+        'y_std': y_std,
+
+        'mass': params['mass'],
+        'G': params['G'],
+        'F_bias': params['F_bias'],
+        'CoM': params['CoM'],
+        'T_bias': params['T_bias'],
+
         'feature_cfg': cfg,
     }, model_filename)
+
     print(f"\nSaved plain NN model to: {model_filename}")
 
 

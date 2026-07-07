@@ -143,7 +143,7 @@ def save_compensated_csv(t, result, out='datasets/compensated_three_methods.csv'
 
 
 def main():
-    filename = './datasets/data1.csv'
+    filename = './datasets/data6.csv'
     os.makedirs('imgs', exist_ok=True)
     os.makedirs('models', exist_ok=True)
     set_seed(42)

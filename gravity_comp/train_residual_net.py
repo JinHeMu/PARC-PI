@@ -20,7 +20,7 @@ from common import (
 
 
 def main():
-    filename = './datasets/data2.csv'
+    filename = './datasets/data6.csv'
     model_filename = './models/residual_compensator.pt'
 
     set_seed(42)
@@ -67,10 +67,20 @@ def main():
     torch.save({
         'method': 'residual_nn',
         'model_state_dict': model.state_dict(),
-        'input_dim': input_dim, 'hidden_dim': 64,
-        'x_mean': x_mean, 'x_std': x_std, 'y_mean': y_mean, 'y_std': y_std,
-        'G': params['G'], 'F_bias': params['F_bias'],
-        'CoM': params['CoM'], 'T_bias': params['T_bias'],
+        'input_dim': input_dim,
+        'hidden_dim': 64,
+
+        'x_mean': x_mean,
+        'x_std': x_std,
+        'y_mean': y_mean,
+        'y_std': y_std,
+
+        'mass': params['mass'],
+        'G': params['G'],
+        'F_bias': params['F_bias'],
+        'CoM': params['CoM'],
+        'T_bias': params['T_bias'],
+
         'feature_cfg': cfg,
     }, model_filename)
     print(f"\nSaved residual compensator to: {model_filename}")
