@@ -27,8 +27,8 @@ def generate_launch_description():
             {
                 "group_name": "jaka_arm",
                 "execute_motion": True,
-                "velocity_scaling": 0.05,
-                "acceleration_scaling": 0.05,
+                "velocity_scaling": 0.02,
+                "acceleration_scaling": 0.02,
                 "planning_time": 10.0,
                 "planning_attempts": 10,
                 "pause_ms": 1000,

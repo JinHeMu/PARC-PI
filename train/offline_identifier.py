@@ -12,7 +12,7 @@ def skew_symmetric(v):
     ])
 
 def main():
-    filename = './datasets/payload_data1.csv'
+    filename = './datasets/data2.csv'
 
     if not os.path.exists(filename):
         print(f"Error: Could not find {filename}")

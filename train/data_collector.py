@@ -79,7 +79,7 @@ class PayloadDataCollector(Node):
         self.csv_writer.writerow(header)
 
         # 采集频率 50 Hz
-        self.timer = self.create_timer(0.02, self.record_data)
+        self.timer = self.create_timer(0.1, self.record_data)
 
         self.get_logger().info(f"Data Collector Started. Saving to {self.csv_filename}")
         self.get_logger().info("Recording quaternion, joint positions, joint velocities, and force/torque data.")
