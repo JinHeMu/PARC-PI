@@ -24,6 +24,8 @@ int main(void)
     robot.servo_move_use_joint_LPF(1);
     
     robot.set_torque_sensor_mode(1); 
+    robot.zero_end_sensor();
+
       
     // robot.servo_move_use_joint_NLF(45,30,30);
     //robot.servo_move_use_joint_NLF(45,45,45);
